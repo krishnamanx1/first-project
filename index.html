@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacob and Co.</title>
+    <style>
+    body {
+            background-image: url('https://www.datocms-assets.com/99008/1723061220-bugatti-tourbillon.webp?auto=compress%2Cformat&dpr=2&w=1519'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents repeating the image */
+            height: 100vh;
+            margin: 0;
+        }
+        {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .slider-wrapper {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-container {
+            display: flex;
+            width: 200vw;
+            height: 100vh;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 70%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: #111;
+            text-align: center;
+            font-size: 1rem;
+            color: #888;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup img {
+            width: 0%;
+            height: auto;
+            border-radius: 12px;
+        }
+        h1 {
+            font-family: "Italiana", sans-serif; /* Italian-style font */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            margin: 0;
+            color: #888;
+        }
+        p {
+            font-family: "Cinzel", serif; /* Cinzel-style font */
+            position: absolute;
+            top: 70px;
+            left: 10px;
+            margin: 0;
+            color: #888;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    </style>
+</head>
+<body>
+    <div class="slider-wrapper">
+        <div class="slider-container" id="slider">
+            <div class="slide" id="mainPage">
+                <div class="container">
+                    <h1>Welcome to Jacob & Co. </h1>
+                    <p>Luxury watches and fine jewelry designed for elegance and precision.</p>
+                </div>
+                <div class="arrow" onclick="slidePage()">➡</div>
+            </div>
+            <div class="slide" id="nextPage" style="background-color: #333;">
+                <div class="gallery">
+                                         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRdHOQEoKk6t6wlwMaSx5cMmMELKi3Zb0zHC6rocCQg3WY-8XWFlgMGxIDjwYTnRLICJ0m5YLNZJ-biVV9ESnCAdpQWCwtxmQ&amp;usqp=CAY" alt="Watch 1"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRDPLCQEj90lhp28UpQtVmiEP162cokjqkJYZ4NRvPsI37_oppML7wuJ-Wv9DRW-PoW7RSl--_-xmSo1-SrrbZUO4fKr_YkW2guQTsoiRHg5_alL3iKof7lsg&amp;usqp=CAE" alt="Watch 2"  onclick="zoomImage(this)" >
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRcNYnNTJzBmE-6QcfN-NNmHJaY8qrMRFVoPlacNmx3iEHYH8_SENdRouIT8H1X_FjhCZ-PnQVMnUqufCHfvn_pO1kPAxrKGw&usqp=CAE" alt="Watch 3"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQzSZBSEnOAEVETdgGn0Fgjj5UnOrl13CVrQ7TAIDVvjQnATORWsGFeBm69VbVQS4R9R3NiGLOZ0dLh31ujiNvP_CYDt4gDcMeGtACmiC3a&usqp=CAE" alt="Watch 4"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRjOzV8tC2q6D1NDT9kdRCrxC82NqlCaiabYZ0Gb2yatCX0gBTYlAyGvFZ-NTCgJrhdsLTjB6Ej7JNy_CjHd_OYDi_f3uC1&usqp=CAE" alt="Watch 5"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ35UqTkPD9XorMteWN-rQr7IlEDPdeikmd0UXho9fav6jIEZGSQvcYQu_qfHzcNOZNjS6bNMnzHpaskpi_jtPPAClc6cqSLc_L01dKRYQ3&usqp=CAE" alt="Watch 6"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcREu6Uo6rZePNHv7yfih9yq38cMdkUH7D2xSV2EVFP313o0P6ddcHK7VQjYRdRdbeYI1ndKZODAr3IKeEoWj0Mxb66hGok3sKstjfaEfs31&usqp=CAE" alt="Watch 7"  onclick="zoomImage(this)">
+                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQsE5cLK5oT7RD4cmWrV6guFbyuosfUOdAxexN6ZBpOUj5FOt7ditWaa1vOnc_U4pU4-BBLq_rF2wW30eatIpOjLMZv1T63vbAwuPn0oxZyVGqFPKnD_Ied&usqp=CAE" alt="Watch 8"  onclick="zoomImage(this)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup" onclick="closePopup()">
+        <img id="popup-img" src="" alt="Zoomed Image">
+    </div>
+    <div class="footer">
+        &copy; 2025 Jacob and Co. All Rights Reserved.
+    </div>
+    <script>
+        function slidePage() {
+            document.getElementById('slider').style.transform = 'translateX(-100vw)';
+        }
+        function zoomImage(img) {
+            document.getElementById('popup-img').src = img.src;
+            document.getElementById('popup').style.display = 'flex';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
